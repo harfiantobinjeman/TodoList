@@ -1,0 +1,12 @@
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\bin\Debug\net6.0\TodoList.Models.deps.json
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\bin\Debug\net6.0\TodoList.Models.dll
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\bin\Debug\net6.0\TodoList.Models.pdb
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.csproj.AssemblyReference.cache
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.AssemblyInfoInputs.cache
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.AssemblyInfo.cs
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.csproj.CoreCompileInputs.cache
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.dll
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\refint\TodoList.Models.dll
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\TodoList.Models.pdb
+D:\han_data\interviewTest\InterviewTodolist\TodoList.Models\obj\Debug\net6.0\ref\TodoList.Models.dll

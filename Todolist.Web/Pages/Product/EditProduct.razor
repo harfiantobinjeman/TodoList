@@ -1,0 +1,39 @@
+﻿@page "/Edit"
+@page "/Edit/{Id:int}"
+
+@inherits EditProductBase
+@foreach (var item in ProductDetail)
+{
+    if (item.Id == Id)
+    {
+        <div>
+            <input @bind-value="@item.Name" />
+            <select id="Cate" @bind="ProductCategory">
+            @foreach (var items in Categori)
+            {
+                <option value="@items.Id">@items.Name</option>
+            }
+        </select>
+            <input @bind-value="@item.Qty" />
+            <input @bind-value="@item.Price" />
+            <input @bind-value="@item.Description" />
+            <input @bind-value="@item.ImageURL" />
+            <button @onclick="()=>(EditProduct_Click(new ProductUpdateToDto{
+            Name=item.Name,
+            CategoryId = ProductCategory,
+            Price = Price,
+            Qty = Qty,
+            Description = ProductDescription,
+            ImageURL = Image
+            }))">
+                Simpan
+            </button>
+        </div>
+
+    }
+}
+
+@Id
+@*@code {
+
+}*@

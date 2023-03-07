@@ -1,0 +1,63 @@
+﻿@page "/Detail/{Id:int}"
+
+@inherits DetailProductsBase
+
+<h3>DetailProducts</h3>
+
+@if (ProductDetail == null)
+{
+    <h3>Loading....</h3>
+}
+else
+{
+
+    <h3 class="mb-5">Product</h3>
+    <h5>Create TodoList</h5>
+    var productCount = ProductDetail.Count();
+    if (productCount > 0)
+    {
+        const int itemPerRow = 4;
+        var productss = new List<ProductDto>();
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Categori</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Description</th>
+                    <th>Opsi</th>
+                </tr>
+                @for (int i = 0; i < productCount; i++)
+                {
+                    productss = ProductDetail.Skip(i * itemPerRow).Take(itemPerRow).ToList();
+                    @foreach (var item in productss)
+                    {
+                        @if (item.Id == Id)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.CategoryName</td>
+                                <td>@item.Price</td>
+                                <td>@item.Qty</td>
+                                <td>@item.Description</td>
+                                <table>
+                                    <tr>
+                                        <td><a href="/Edit/@item.Id">Edit</a></td>
+                                        <td><button onclick="">Delate</button></td>
+                                    </tr>
+                                </table>
+                            </tr>
+                        }
+                        
+                    }
+                }
+            </table>
+        </div>
+    }
+}
+
+@Id
+@*@code {
+
+}*@

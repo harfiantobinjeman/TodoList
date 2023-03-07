@@ -1,0 +1,88 @@
+﻿@page "/"
+
+
+@inherits ProductBase
+
+
+@if (Products == null)
+{
+    <h3>Loading....</h3>
+}
+else
+{
+
+    <h3 class="mb-5">Product</h3>
+    <h5>Create TodoList</h5>
+    <div style="display:flex">
+            <div>
+                <label for="name">Name</label>
+                <input id="Name" @bind="ProductName"/>
+            </div>
+        <select id="Cate" @bind="ProductCategory">
+            @foreach (var item in Categori)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div style="display:flex">
+        <p>Price <input type="number" @bind="Price" /></p>
+        <p>Qty <input type="number" @bind="Qty" /></p>
+        <p>descript<input id="descrip" @bind="ProductDescription" /></p>
+        <p>descript<input id="Image" @bind="Image" /></p>
+        <button @onclick="()=>(AddProduct_Click(new ProductAddToDto{
+            Name=ProductName,
+            CategoryId = ProductCategory,
+            Price = Price,
+            Qty = Qty,
+            Description = ProductDescription,
+            ImageURL = Image
+            }))">Simpan</button>
+    </div>
+    var productCount = Products.Count();
+    if (productCount > 0)
+    {
+        const int itemPerRow = 4;
+        var productss = new List<ProductDto>();
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Categori</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Description</th>
+                    <th>Opsi</th>
+                </tr>
+                @for (int i = 0; i < productCount; i++)
+                {
+                    productss = Products.Skip(i * itemPerRow).Take(itemPerRow).ToList();
+                    @foreach (var item in productss)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.CategoryName</td>
+                            <td>@item.Price</td>
+                            <td>@item.Qty</td>
+                            <td>@item.Description</td>
+                            <table>
+                                <tr>
+                                    <td><a href="/Edit/@item.Id">Edit</a></td>
+                                    <td><a href="/Detail/@item.Id">Detail</a></td>
+                                    <td><button @onclick="(()=> DelProduct_Click(item.Id))">Delate</button></td>
+                                </tr>
+                            </table>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    }
+}
+
+
+@*<h3>Product</h3>
+
+@code {
+
+}*@
